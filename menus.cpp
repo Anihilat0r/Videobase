@@ -48,6 +48,7 @@ void signup_menu(std::unordered_map<int, employee>& employee_list, std::unordere
 void customer_menu(std::vector<movie>& movie_list, std::unordered_map<int, customer>& customer_list, int id) {
 
 	string user_choice;
+	bool exit_menu = false;
 
 	do {
 
@@ -61,7 +62,7 @@ void customer_menu(std::vector<movie>& movie_list, std::unordered_map<int, custo
 			cout << "Please enter a valid answer.\n";
 		}
 		else if (user_choice[0] == '0') {
-			break;
+			exit_menu = true;
 		}
 		else if (user_choice[0] == '1') {
 
@@ -74,12 +75,13 @@ void customer_menu(std::vector<movie>& movie_list, std::unordered_map<int, custo
 		else {
 			cout << "Please enter a valid answer.\n";
 		}
-	} while (1);
+	} while (!exit_menu);
 }
 
 void employee_menu(std::vector<movie>& movie_list) {
 
 	string user_choice;
+	bool exit_menu = false;
 
 	do {
 
@@ -93,7 +95,7 @@ void employee_menu(std::vector<movie>& movie_list) {
 			cout << "Please enter a valid answer.\n";
 		}
 		else if (user_choice[0] == '0') {
-			break;
+			exit_menu = true;
 		}
 		else if (user_choice[0] == '1') {
 			movie_catalogue_modification(movie_list);
@@ -104,12 +106,13 @@ void employee_menu(std::vector<movie>& movie_list) {
 		else {
 			cout << "Please enter a valid answer.\n";
 		}
-	} while (1);
+	} while (!exit_menu);
 }
 
 void admin_menu(std::unordered_map<int, employee>& employee_list, std::unordered_map<int, customer>& customer_list) {
 
 	string user_choice;
+	bool exit_menu = false;
 
 	do {
 
@@ -123,7 +126,7 @@ void admin_menu(std::unordered_map<int, employee>& employee_list, std::unordered
 			cout << "Please enter a valid answer.\n";
 		}
 		else if (user_choice[0] == '0') {
-			break;
+			exit_menu = true;
 		}
 		else if (user_choice[0] == '1') {
 			print_list(customer_list);
@@ -134,7 +137,7 @@ void admin_menu(std::unordered_map<int, employee>& employee_list, std::unordered
 		else {
 			cout << "Please enter a valid answer.\n";
 		}
-	} while (1);
+	} while (!exit_menu);
 }
 
 void try_renting(std::vector<movie>& movie_list, std::unordered_map<int, customer>& customer_list, int id) {
