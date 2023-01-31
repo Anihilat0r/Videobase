@@ -20,7 +20,7 @@ void signup(std::unordered_map<int, employee>& employee_list, std::unordered_map
 		//Unique id keys bcs usernames are unique as explained below.
 		for (char& i : current.GetUsername()) {
 			adder += int(i);
-		};
+		}
 
 		//Check if the username entered already exists in the employee or client data.
 		//If it does, it is not accepted and the user is asked to input a different value.
@@ -58,7 +58,7 @@ void signup(std::unordered_map<int, employee>& employee_list, std::unordered_map
 		//Unique id keys because usernames are unique as explained below.
 		for (char& i : current.GetUsername()) {
 			adder += int(i);
-		};
+		}
 
 		//Check if the username entered already exists in the employee or client data.
 		//If it does, it is not accepted and the user is asked to input a different value.
@@ -96,7 +96,7 @@ void login(std::unordered_map<int, employee>& employee_list, std::unordered_map<
 
 	for (char& i : un) {
 		adder += int(i);
-	};
+	}
 
 	if (employee_list.count(adder) != 0) {
 
@@ -120,7 +120,7 @@ void login(std::unordered_map<int, employee>& employee_list, std::unordered_map<
 	{
 		cout << "Wrong username or password!!!\n";
 	}
-};
+}
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -139,7 +139,7 @@ void print_list(std::vector<movie>& list, string mode) {
 			cout << "Title : " << i.GetTitle() << " | Year released : " << i.GetYear()
 				<< " | Stock : " << i.GetStock() << " | Number of copies available : " << i.GetCopies()
 				<< " | Score : " << i.GetScore() << " | Cost per day : " << i.GetCostperday() << '\n';
-		};
+		}
 	}
 	else {
 		bool no_copies = true;
@@ -151,7 +151,7 @@ void print_list(std::vector<movie>& list, string mode) {
 					<< " | Score : " << i.GetScore() << " | Cost per day : " << i.GetCostperday() << '\n';
 				no_copies = false;
 			}
-		};
+		}
 		if (no_copies == true) cout << "Empty.\n";
 	}
 }
@@ -171,8 +171,8 @@ void print_list(std::unordered_map<int, employee> employee_list) {
 	for (auto& [i, member] : employee_list) {
 		cout << "Username : " << member.GetUsername() << " | Password : " << member.GetPassword() << " | Full name : " << member.GetName()
 			<< " | Employee's salary : " << member.GetSalary() << '\n';
-	};
-};
+	}
+}
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -190,8 +190,8 @@ void print_list(std::unordered_map<int, customer> customer_list) {
 		cout << "Username : " << member.GetUsername() << " | Password : " << member.GetPassword() << " | Full name : " << member.GetName()
 			<< " | Current movie's rent date : " << member.GetRentDate()
 			<< " | Current movie's cost/day : " << member.GetCost() << '\n';
-	};
-};
+	}
+}
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -277,7 +277,7 @@ void load_movies(std::vector<movie>& movie_list) {
 		movie_list.push_back(m1);
 	}
 	file_handler.close();
-};
+}
 
 void load_customers(std::unordered_map<int, customer>& customer_list) {
 
@@ -309,9 +309,9 @@ void load_customers(std::unordered_map<int, customer>& customer_list) {
 
 		//After all the values are set transfer the object in the map
 		customer_list[c1.GetId()] = c1;
-	};
+	}
 	file_handler.close();
-};
+}
 
 void load_employees(std::unordered_map<int, employee>& employee_list) {
 
@@ -352,7 +352,7 @@ void save_movies(std::vector<movie>& movie_list) {
 			<< "|" << i.GetCopies() << "|" << i.GetScore() << "|" << i.GetCostperday() << '\n';
 	}
 	file_handler.close();
-};
+}
 
 void save_customers(std::unordered_map<int, customer>& customer_list) {
 
@@ -365,7 +365,7 @@ void save_customers(std::unordered_map<int, customer>& customer_list) {
 			<< "|" << member.GetCurrentMovie() << "|" << member.GetRentDate() << "|" << member.GetCost() << "|" << member.GetMovieYear() << '\n';
 	}
 	file_handler.close();
-};
+}
 
 void save_employee(std::unordered_map<int, employee>& employee_list) {
 
@@ -378,7 +378,7 @@ void save_employee(std::unordered_map<int, employee>& employee_list) {
 			<< "|" << member.GetSalary() << '\n';
 	}
 	file_handler.close();
-};
+}
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------*/
 
