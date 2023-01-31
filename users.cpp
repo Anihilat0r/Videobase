@@ -129,7 +129,7 @@ void customer::rent_movie(std::vector<movie> movie_list) {
 			found = true;
 			break;
 		}
-	};
+	}
 	if (found == false) cout << title << " is not available at our stores.\n";
 }
 
@@ -166,7 +166,7 @@ void customer::return_movie(std::vector<movie> movie_list) {
 			i.SetStock(i.GetStock() + 1);
 			break;
 		}
-	};
+	}
 
 	//Update the current customer's data in the map
 	this->current_movie = "<none>";
