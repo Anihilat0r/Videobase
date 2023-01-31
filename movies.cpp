@@ -12,7 +12,7 @@ movie::movie() {
 	year_released = 0;
 	copies_available = 0;
 	stock = 0;
-};
+}
 
 string movie::GetTitle() {
 	return title;
