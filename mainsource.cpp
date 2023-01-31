@@ -13,6 +13,7 @@ int main() {
 	load_employees(employee_list);
 	
 	string user_choice;
+	bool exit_menu = false;
 
 	do {
 
@@ -27,7 +28,7 @@ int main() {
 			cout << "Please enter a valid answer.\n";
 		}
 		else if (user_choice[0] == '0') {
-			break;
+			exit_menu = true;
 		}
 		else if (user_choice[0] == '1') {
 			signup_menu(employee_list, customer_list);
@@ -41,7 +42,7 @@ int main() {
 		else {
 			cout << "Please enter a valid answer.\n";
 		}
-	} while (1);
+	} while (!exit_menu);
 
 	//Save data to files before exiting
 	save_movies(movie_list);
