@@ -54,7 +54,7 @@ void movie::SetStock(int stock) {
 
 movie::~movie() {
 	//cout << "Movie : " << id << " deleted.\n";
-};
+}
 
 void movie::modify_copies(std::vector<movie>& movie_list) {
 	bool found = false;
@@ -95,7 +95,7 @@ void movie::modify_copies(std::vector<movie>& movie_list) {
 			found = true;
 			break;
 		}
-	};
+	}
 
 	//If the movie soesn't exist in the catalogue enter the rest of its information
 	if (found == false) {
@@ -139,7 +139,7 @@ void movie::modify_copies(std::vector<movie>& movie_list) {
 
 		movie_list.push_back(*this);
 	}
-};
+}
 
 void movie::modify_existing_listing(std::vector<movie>& movie_list, movie& current_movie) {
 	int extra_copies, movie_position;
@@ -169,7 +169,7 @@ void movie::modify_existing_listing(std::vector<movie>& movie_list, movie& curre
 		current_movie.stock += extra_copies;
 		current_movie.copies_available += extra_copies;
 	}
-};
+}
 
 void movie_catalogue_modification(std::vector<movie>& movie_list)
 {
@@ -192,4 +192,4 @@ void movie_catalogue_modification(std::vector<movie>& movie_list)
 
 	} while (user_choice[0] == 'Y');
 
-};
+}
