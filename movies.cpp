@@ -65,7 +65,8 @@ void movie::modify_copies(std::vector<movie>& movie_list) {
 	//Get the current date in order to check movie release year validity
 	tm current_time;
 	time_t now = time(0);
-	localtime_s(&current_time, &now);
+	
+	localtime_r(&now, &current_time);
 
 	cout << "Enter movie title : ";
 	this->title = user_input_other();

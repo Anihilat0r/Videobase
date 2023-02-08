@@ -201,7 +201,7 @@ string user_input_log() {
 
 	bool valid_input = true;
 	string user_input;
-	const int none = string::npos;
+	const long unsigned int none = string::npos;
 
 	do {
 
@@ -223,7 +223,7 @@ string user_input_other() {
 
 	bool valid_input = true;
 	string user_input;
-	const int none = string::npos;
+	const long unsigned int none = string::npos;
 
 	do {
 

@@ -96,7 +96,8 @@ void customer::rent_movie(std::vector<movie> movie_list) {
 	//The following variables exist in order to get the current year to check for user input year validity
 	tm current_time;
 	time_t now = time(0);
-	localtime_s(&current_time, &now);
+	
+	localtime_r(&now, &current_time);
 
 	cout << "Enter the title of the movie you would like to rent : ";
 	std::getline(cin, title);
@@ -138,8 +139,9 @@ void customer::return_movie(std::vector<movie> movie_list) {
 	double days, cost;
 	tm return_time, rent_time;
 	time_t now = time(0);
-	localtime_s(&return_time, &now);
-	localtime_s(&rent_time, &this->rent_date);
+
+	localtime_r(&now, &return_time);
+	localtime_r(&this->rent_date, &rent_time);
 
 	//Find the number of days to charge for rent
 	days = (now - this->rent_date) / 86400;
